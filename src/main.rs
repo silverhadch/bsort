@@ -10,8 +10,7 @@ fn main() {
     while !finish {
         let längearr = arr.len(); 
 
-        if array_index < längearr - 1 && arr[array_index] > arr[array_index + 1] {
-          
+        if array_index < längearr - 1 && arr[array_index] > arr[array_index + 1] {  
             arr.swap(array_index, array_index + 1);
             switch += 1;
         }
