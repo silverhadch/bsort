@@ -9,20 +9,18 @@ fn main() {
     while !finish {
         let length = arr.len();
 
-        if array_index < length - 1 && arr[array_index] > arr[array_index + 1] {  
-            arr.swap(array_index, array_index + 1);
-            switch += 1;
+        switch = 0; // Reset switch count for each pass
+
+        for i in 0..length - 1 {
+            if arr[i] > arr[i + 1] {
+                arr.swap(i, i + 1);
+                switch += 1;
+            }
         }
 
-        array_index += 1;
-        if array_index >= length - 1 {
-            if switch == 0 {
-                finish = true;
-                println!("Sorted result: {:?}", &arr);
-            }
-
-            array_index = 0;
-            switch = 0;
+        if switch == 0 {
+            finish = true;
+            println!("Sorted result: {:?}", &arr);
         }
     }
 }
